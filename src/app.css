@@ -1,0 +1,34 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+.bg-custom-radial {
+	background-image: radial-gradient(
+		circle,
+		#9a8c98,
+		#8d7f8f,
+		#7e7385,
+		#70677d,
+		#605c74,
+		#555670,
+		#4a516c,
+		#3e4c67,
+		#344a64,
+		#2a4961,
+		#1f475d,
+		#124559
+	);
+}
+
+html {
+	scroll-behaviour: smooth;
+}
++ {
+	font-family: 'Roboto', sans-serif;
+}
+h1,
+h2,
+h3,
+.poppins {
+	font-family: 'Poppins', sans-serif;
+}
