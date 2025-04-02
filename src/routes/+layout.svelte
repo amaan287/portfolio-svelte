@@ -18,18 +18,18 @@
 >
 	<div
 		class={'fixed-bottom-0 z-[10] flex w-full p-10 duration-200' +
-			(y > 0 ? 'opacity-full pointer-events-auto' : 'pointer-events-none opacity-0 hidden')}
+			(y > 0 ? 'opacity-full pointer-events-auto' : 'pointer-events-none hidden opacity-0')}
 	>
 		<button
 			on:click={goTop}
-			class="ml-auto rounded-full bg-white py-2 px-3 text-gray-900 shadow-lg transition-all duration-200 hover:bg-gray-100 sm:px-4"
+			class="ml-auto rounded-full bg-white px-3 py-2 text-gray-900 shadow-lg transition-all duration-200 hover:bg-gray-100 sm:px-4"
 		>
-			<i class="fa-solid fa-arrow-up grid place-items-center aspect-square" />
+			<i class="fa-solid fa-arrow-up grid aspect-square place-items-center" />
 		</button>
 	</div>
 
-	<Header {y} {innerHeight} />
+	<Header {y} />
 	{@render children()}
-	<Footer y={y} />
+	<Footer />
 </div>
 <svelte:window bind:scrollY={y} bind:innerHeight bind:innerWidth />

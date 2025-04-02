@@ -4,14 +4,12 @@
         backend: ['Node.js', 'Bun',  'Express.js', 'Go', 'C' ],
         database: ['MongoDB', 'PostgreSQL', 'MySQL', 'Firebase', 'Redis'],
         tools: ['Git', 'GitHub', 'VSCode', 'Postman', 'Docker', ]
-    };
-
+    };        
     // Calculate skill counts for the graph
     const skillCounts = Object.entries(skills).map(([category, items]) => ({
         category,
         count: items.length
     }));
-
     // Find max count for percentage calculation
     const maxCount = Math.max(...skillCounts.map(s => s.count));
 </script>
