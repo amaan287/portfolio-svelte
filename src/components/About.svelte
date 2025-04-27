@@ -33,7 +33,7 @@ class="flex flex-col gap-2 text-center relative before:absolute before:top-0 bef
         Want to know more?
     </h6>
     <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
-        A bit <span class="poppins text-orange-400">about</span> me.
+        A bit <span class="poppins text-[#81a1c1]">about</span> me.
     </h3>
 </div>
 <p class="mx-auto poppins font-semibold text-lg sm:text-xl md:text-2xl">
@@ -72,7 +72,7 @@ class="flex flex-col gap-2 text-center relative before:absolute before:top-0 bef
     {/each}
 </div>
 <h5 class={" text-2xl sm:text-3xl font-semibold text-center poppins "}>
-    The <span class="text-orange-400">Complete</span> Package
+    The <span class="text-[#81a1c1]">Complete</span> Package
 </h5>
 <div
     class="flex flex-col overflow-x-scroll gap-10 max-w-[800px] mx-auto w-full"

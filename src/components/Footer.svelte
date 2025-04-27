@@ -22,7 +22,7 @@
 		<p><b class="pr-2">Email</b> amaanmirza287@gmail.com</p>
 		<p>
 			<b class="pr-2">GitHub</b>
-			<a href="https://github.com/amaan287" target="_blank" class="text-orange-400"
+			<a href="https://github.com/amaan287" target="_blank" class="text-[#81a1c1]"
 				>amaan287<sup class=""
 					><span class="scale-75 pl-0.5 text-xs"
 						><i class="fa-solid fa-arrow-up-right-from-square scale-[75%] text-xs"></i></span
@@ -32,7 +32,7 @@
 		</p>
 		<p>
 			<b class="pr-2">Twitter / x</b>
-			<a href="https://x.com/amaanmi33454302" target="_blank" class="text-orange-400"
+			<a href="https://x.com/amaanmi33454302" target="_blank" class="text-[#81a1c1]"
 				>amaan mirza<sup class=""
 					><span class="scale-75 pl-0.5 text-xs"
 						><i class="fa-solid fa-arrow-up-right-from-square scale-[75%] text-xs"></i></span
@@ -45,7 +45,7 @@
 			<a
 				href="https://www.linkedin.com/in/amaan-mirza-5a17aa324/"
 				target="_blank"
-				class="text-orange-400"
+				class="text-[#81a1c1]"
 				>Amaan_mirza<sup class=""
 					><span class="scale-75 pl-0.5 text-xs"
 						><i class="fa-solid fa-arrow-up-right-from-square scale-[75%] text-xs"></i></span

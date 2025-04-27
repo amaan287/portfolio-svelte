@@ -52,7 +52,7 @@
             
             <div class="flex items-center justify-between">
                 <button 
-                    class="bg-orange-400 hover:bg-red-400 transition-all duration-400 text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline w-full" 
+                    class="bg-[#81a1c1] hover:bg-red-400 transition-all duration-400 text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline w-full" 
                     type="submit"
                 >
                     Publish Article

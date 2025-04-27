@@ -11,7 +11,7 @@
 		},
 		{
 			name: 'blog',
-			href: '#blog'
+			href: '/blog'
 		}
 	];
 </script>
@@ -36,7 +36,7 @@
 			class="blueShadow group relative overflow-hidden rounded-full bg-orange-100 px-5 py-2 text-slate-950"
 		>
 			<div
-				class="absolute top-0 right-full z-0 h-full w-full bg-orange-400 opacity-20 duration-200 group-hover:translate-x-full"
+				class="absolute top-0 right-full z-0 h-full w-full bg-[#81a1c1] opacity-20 duration-200 group-hover:translate-x-full"
 			></div>
 			<a href="/blog">
 				<h4 class="relative z-9">Get in touch</h4>

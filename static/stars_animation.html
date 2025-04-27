@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .night {
+            position: absolute;
+            /* position: relative; */
+            width: 100%;
+            height: 100%;
+            transform: rotateZ(0deg);
+        }
+
+        .star {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            height: 4px;
+            background: linear-gradient(-45deg, #dad7cd, rgba(0, 0, 255, 0));
+            rotate: 45deg;
+            border-radius: 999px;
+            filter: drop-shadow(0 0 7px #699BFF);
+            animation: tail 10s ease-in-out infinite,
+                falling 10s ease-in-out infinite;
+        }
+
+        @keyframes tail {
+            0% {
+                width: 0;
+            }
+
+            30% {
+                width: 100px;
+            }
+
+            100% {
+                width: 0;
+            }
+        }
+
+        @keyframes falling {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(1500px);
+            }
+        }
+
+
+
+        @keyframes shining {
+            0% {
+                width: 0;
+            }
+
+            50% {
+                width: 30px;
+            }
+
+            100% {
+                width: 0;
+            }
+        }
+
+        .star::after {
+            transform: translateX(50%) rotateZ(-45deg);
+        }
+
+        .star:nth-child(1) {
+            top: calc(-150px);
+            left: calc(100vw + 150px);
+            animation-delay: 1s;
+        }
+
+        .star:nth-child(1)::before,
+        .star:nth-child(1)::after {
+            animation-delay: 1s;
+        }
+
+        .star:nth-child(2) {
+            top: calc(-120px);
+            left: calc(325px);
+            animation-delay: 1.2s;
+        }
+
+        .star:nth-child(2)::before,
+        .star:nth-child(2)::after {
+            animation-delay: 1.2s;
+        }
+
+        .star:nth-child(3) {
+            top: calc(-100px);
+            left: calc(-400px);
+            animation-delay: 1.4s;
+        }
+
+        .star:nth-child(3)::before,
+        .star:nth-child(3)::after {
+            animation-delay: 1.4s;
+        }
+
+        .star:nth-child(4) {
+            top: calc(-140px);
+            left: calc(-200px);
+            animation-delay: 1.6s;
+        }
+
+        .star:nth-child(4)::before,
+        .star:nth-child(4)::after {
+            animation-delay: 1.6s;
+        }
+
+        .star:nth-child(5) {
+            top: calc(-60px);
+            left: calc(325px);
+            animation-delay: 1.8s;
+        }
+
+        .star:nth-child(6) {
+            top: calc(-120px);
+            left: calc(125px);
+            animation-delay: 1.8s;
+        }
+
+        .star:nth-child(6)::before,
+        .star:nth-child(6)::after {
+            animation-delay: 1.8s;
+        }
+
+        .star:nth-child(7) {
+            top: calc(-120px);
+            left: calc(225px);
+            animation-delay: 1.8s;
+        }
+
+        .star:nth-child(7)::before,
+        .star:nth-child(5)::after {
+            animation-delay: 1.8s;
+        }
+
+        .star:nth-child(8) {
+            top: calc(-120px);
+            left: calc(325px);
+            animation-delay: 1.8s;
+        }
+
+        .star:nth-child(8)::before,
+        .star:nth-child(8)::after {
+            animation-delay: 1.8s;
+        }
+
+        .star:nth-child(9) {
+            top: calc(-120px);
+            left: calc(375px);
+            animation-delay: 1.8s;
+        }
+
+        .star:nth-child(9)::before,
+        .star:nth-child(9)::after {
+            animation-delay: 1.8s;
+        }
+
+        .star:nth-child(10) {
+            top: calc(-120px);
+            left: calc(425px);
+            animation-delay: 1.8s;
+        }
+
+        .star:nth-child(10)::before,
+        .star:nth-child(10)::after {
+            animation-delay: 1.8s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="night">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+    <script>
+        // Function to wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all stars
+            const stars = document.querySelectorAll('.star');
+
+            // Only modify stars 6-10 (index 5-9)
+            for (let i = 5; i < stars.length; i++) {
+                // Generate random positions
+                let randomTop = Math.floor(Math.random() * 150) * -1; // Random negative value between -150 and 0
+                let randomLeft;
+
+                // 50% chance of being on left or right side
+                if (Math.random() > 0.5) {
+                    // Left side (negative values)
+                    randomLeft = Math.floor(Math.random() * 400) * -1; // -400 to 0
+                } else {
+                    // Right side (positive values)
+                    randomLeft = Math.floor(Math.random() * 400); // 0 to 400
+                }
+
+                // Apply the random values
+                stars[i].style.top = `calc(${randomTop}px)`;
+                stars[i].style.left = `calc(${randomLeft}px)`;
+
+                // Random animation delay between 1.5 and 3 seconds
+                const randomDelay = (1.5 + Math.random() * 1.5).toFixed(1);
+                stars[i].style.animationDelay = `${randomDelay}s`;
+
+                // Also set the delay for pseudo-elements if they exist
+                const style = document.createElement('style');
+                style.textContent = `
+                    .star:nth-child(${i + 1})::before, .star:nth-child(${i + 1})::after {
+                        animation-delay: ${randomDelay}s;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+        });
+    </script>
+</body>
+
+</html>
