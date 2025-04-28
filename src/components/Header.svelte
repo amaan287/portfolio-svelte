@@ -3,7 +3,7 @@
 	const tabs = [
 		{
 			name: 'Projects',
-			href: '#projects'
+			href: '/projects'
 		},
 		{
 			name: 'About',

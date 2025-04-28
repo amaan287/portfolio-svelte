@@ -1,10 +1,14 @@
-<script>
-    export let step;
+<script lang="ts">
+    export let step: {
+        name: string;
+        icon: string;
+        description: string;
+        href?: string;
+    };
 </script>
 
 <a
-    href={step.href}
-    target="_blank"
+    href={step.href || "#"}
     class="p-4 sm:p-6 md:p-8 flex flex-col gap-4 rounded-lg text-center cursor-pointer group hover:border-violet-400 duration-200"
 >
     <div

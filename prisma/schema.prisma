@@ -20,6 +20,7 @@ model Project {
   id          String   @id @default(uuid())
   name        String
   description String
+  blog        String   @default(" ")
   icon        Bytes
   link        String
   createdAt   DateTime @default(now())

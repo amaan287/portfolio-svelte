@@ -2,7 +2,13 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
-    // Create sample projects
+    // Create sample projects if they don't exist
+    const existingProjects = await prisma.project.findMany();
+    if (existingProjects.length > 0) {
+        console.log('Projects already exist, skipping seed');
+        return;
+    }
+    
     const projects = [
         {
             name: 'AI Form Builder',
