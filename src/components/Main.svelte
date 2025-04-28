@@ -2,6 +2,21 @@
 	import About from './About.svelte';
 	import Projects from './Projects.svelte';
 	import Skils from './Skils.svelte';
+	import { page } from '$app/stores';
+	
+	type PageData = {
+		projects: {
+			id: string;
+			name: string;
+			description: string;
+			icon: string | null;
+			link: string;
+			createdAt: Date;
+			updatedAt: Date;
+		}[];
+	};
+	
+	const projectsData = $derived($page.data as PageData);
 </script>
 
 <main class="mx-auto flex flex-1 flex-col p-4">
@@ -48,6 +63,6 @@
         </div> -->
 	</section>
 	<Skils />
-	<Projects />
+	<Projects data={projectsData} />
 	<About />
 </main>

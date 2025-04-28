@@ -1,25 +1,9 @@
-<script>
+<script lang="ts">
+	import type { PageData } from '../routes/projects/$types';
 	import Step from './Step.svelte';
-	let steps = [
-		{
-			name: 'AI Form builder',
-			icon: 'fa-solid fa-cart-shopping',
-			description:
-				'Smoljames Store is a a merchanising store created with Next.js, Commerce.js & Stripe! Commerce.js is a CMS for managing project and Stripe is used for all transaction handling.'
-		},
-		{
-			name: 'Ai calculator',
-			icon: 'fa-solid fa-list-check',
-			description:
-				'Test for model robustness with customized test profiles and receive exhaustive reporting on the performance and potential vulnerabilities of your model.'
-		},
-		{
-			name: 'Pokédex',
-			icon: 'fa-solid fa-diagram-project',
-			description:
-				'Augment your datasets with our filters and dataset manipulations to ensure your models are trained on the highest quality datasets (coming soon).'
-		}
-	];
+	
+	let { data } = $props<{data?: PageData}>();
+	const projects = $derived(data?.projects?.slice(0, 3) || []);
 </script>
 
 <section class="flex flex-col gap-24 py-20 lg:py-32" id="projects">
@@ -29,38 +13,28 @@
 			Curious to <span class="poppins text-[#81a1c1]">see</span> my work?
 		</h3>
 	</div>
-	<a
-		href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-		target="_blank"
-		class="mx-auto -mt-10 -mb-4 flex items-center gap-2 rounded-md border border-solid border-white px-4 py-2 duration-200 hover:border-orange-700 sm:-mb-0"
-	>
-		<i class="fa-regular fa-circle-play" />
-		<p>Watch the video</p>
-	</a>
+
 	<div class="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-10">
-		<Step step={steps[0]}>
-			<p>
-				Smoljames Store is a a merchanising store created with <strong class="text-[#81a1c1]"
-					>Next.js, Commerce.js, Stripe & Node.js + Express.js!</strong
-				> Commerce.js is a product CMS and Stripe is used for all transaction handling.
-			</p>
-		</Step>
-		<Step step={steps[1]}>
-			<p>
-				Ultimate Todos is a Full Stack <strong class="text-[#81a1c1]">Next.js</strong>,
-				<strong class="text-[#81a1c1]">Node.js + Express.js</strong>
-				& <strong class="text-[#81a1c1]">Firebase</strong> CRUD application that allows a user to login,
-				manage a tidy and efficacious todo list, and persist this information across devices.
-			</p>
-		</Step>
-		<Step step={steps[2]}>
-			<p>
-				The Pokédex is a <strong class="text-[#81a1c1]">SvelteKit & TailwindCSS</strong>
-				web application, hosted on
-				<strong class="text-[#81a1c1]">Netlify</strong>, that consumes and caches the
-				<strong class="text-[#81a1c1]">Pokémon API</strong>
-				to display all Pokémon information. Gotta catch them all!
-			</p>
-		</Step>
+		{#each projects as project}
+			<Step step={{
+				name: project.name,
+				icon: 'fa-solid fa-code',
+				description: project.description,
+				href: `/projects/${project.id}`
+			}}>
+				<div class="flex flex-col gap-4">
+					{#if project.icon}
+						<img 
+							src={project.icon} 
+							alt={project.name} 
+							class="w-full h-48 object-cover rounded-lg"
+						/>
+					{/if}
+					<p>
+						{project.description}
+					</p>
+				</div>
+			</Step>
+		{/each}
 	</div>
 </section>
